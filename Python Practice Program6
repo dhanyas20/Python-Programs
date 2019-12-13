@@ -1,0 +1,10 @@
+Ask the user for a string and print out whether this string is a palindrome or not. (A palindrome is a string that reads the same forwards and backwards.)
+
+Solution: 
+word = input("Enter a string");
+reversed_word = word[::-1];
+
+if word == reversed_word:
+print("The string you entered is a palindrome");
+else:
+print("The string you entered is not a palindrome");
