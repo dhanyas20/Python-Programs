@@ -1,0 +1,17 @@
+Write a password generator in Python. 
+Be creative with how you generate passwords - strong passwords have a mix of lowercase letters, uppercase letters, numbers, and symbols. 
+The passwords should be random, generating a new password every time the user asks for a new password.
+
+Solution:
+
+import random
+import string
+
+characters = string.ascii_letters + string.punctuation  + string.digits;
+length = len(characters);
+password = "";
+
+for i in range(0,8):
+    password += characters[random.randint(0,length)];
+
+print(password);
