@@ -1,0 +1,53 @@
+Create a program that will play the “cows and bulls” game with the user. The game works like this:
+
+Randomly generate a 4-digit number. Ask the user to guess a 4-digit number. 
+For every digit that the user guessed correctly in the correct place, they have a “bull”. 
+For every digit the user guessed correctly in the wrong place is a “cow.” 
+Every time the user makes a guess, tell them how many “cows” and “bulls” they have. 
+Once the user guesses the correct number, the game is over. 
+Keep track of the number of guesses the user makes throughout teh game and tell the user at the end.
+
+Solution:
+
+import random
+
+print("Welcome to the game of Cow-Bull ! Guess the 4 digit secret number");
+secret_number = random.randint(1000,9999);
+print(secret_number);
+
+number_of_guesses = 0;
+
+while True:
+    cow = 0;
+    bull = 0;
+    temp_secret = secret_number;
+    
+    guess = int(input("Guess the four digit number"));
+
+    number_of_guesses += 1;
+    secret_digits = [];
+    guess_digits = [];
+
+    if guess == secret_number:
+        break;
+    else:
+        while(temp_secret > 0):
+            secret_digits.append(temp_secret%10);
+            temp_secret //= 10;
+
+        while(guess > 0):
+            guess_digits.append(guess%10);
+            guess //= 10;  
+
+        for i in range(0,4):
+            if guess_digits[i] == secret_digits[i]:
+                bull += 1;
+            else:
+                if guess_digits[i] in secret_digits:
+                    cow += 1;
+
+        print("Number of cows: " + str(cow));
+        print("Number of bulls: " + str(bull));
+
+print("Yay! You guessed it right");
+print("The number of guesses you took was: " + str(number_of_guesses));
