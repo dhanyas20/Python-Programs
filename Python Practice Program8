@@ -1,0 +1,28 @@
+Generate a random number between 1 and 9 (including 1 and 9). Ask the user to guess the number, then tell them whether they guessed too low, too high, or exactly right. (Hint: remember to use the user input lessons from the very first exercise)
+
+Extras: 
+Keep track of how many guesses the user has taken, and when the game ends, print this out.
+
+Solution: 
+
+import random
+print("Welcome! I shall think of a number between 1 to 10. You have to guess the number");
+print("You can take as many guesses you want, but lesser the guesses, more the talented!!");
+print("I shall give hint for your every guess. To stop or discontinue in between enter 'exit'");
+
+number = random.randint(1,10);
+answer = 'y';
+count = 0
+
+while answer != 'n':
+guess = int(input("Enter your guess"));
+count += 1;
+if guess < number:
+print(str(guess) + " is lesser than the number");
+elif guess > number: 
+print(str(guess) + " is greater than the number");
+else:
+print("Yay! You have guessed the number");
+print("You took " + str(count) + " number of guessed to guess the secret number");
+break;
+answer = input("Do you want to continue your guess ? give 'y' or 'n'");
