@@ -1,0 +1,32 @@
+Write a function that takes an ordered list of numbers (a list where the elements are in order from smallest to largest) and another number. The function decides whether or not the given number is inside the list and returns (then prints) an appropriate boolean.
+
+Extras:
+Use binary search.
+
+Solution:
+
+ordered_list = [2,8,23,31,54,58,62,76,84,92];
+
+number = int(input("Enter a number within 100 to check if it is present in the list"));
+length = len(ordered_list);
+
+def find_element(ordered_list, number):
+    length = len(ordered_list);
+    
+    while length > 1:
+
+        length = len(ordered_list);
+        num = ordered_list[length//2];
+
+        if number < num:
+            ordered_list = ordered_list[:length//2];
+            
+        elif number > num:
+            ordered_list = ordered_list[length//2:];
+            
+        elif number == num:
+            return True;
+    return False;
+
+result = find_element(ordered_list,number);
+print(result);
