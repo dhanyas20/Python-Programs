@@ -1,0 +1,26 @@
+Make a two-player Rock-Paper-Scissors game. (Hint: Ask for player plays (using input), compare them, print out a message of congratulations to the winner, and ask if the players want to start a new game)
+
+Remember the rules:
+
+Rock beats scissors
+Scissors beats paper
+Paper beats rock
+
+Solution: 
+print("Welcome to the game of rock, paper, scissors");
+print("This is a two player game!. Now lets start the game");
+answer = 'y';
+
+while answer != 'n':
+     print("Rock! Paper! Scissors!")
+    player1 = input("Player1! Enter your choice ");
+    player1 = player1.lower();
+    player2 = input("Player2! Enter your choice ");
+    player2 = player2.lower();
+
+    if (player1 == "rock" and player2 == "scissors") or (player1 == "scissors" and player2 == "paper") or (player1 == "paper" and player2 == "rock"):
+            print("Player1 ! You won the game");
+   else:
+            print("Player2 ! You won the game");
+
+    answer = input("Do you want to continue the game? If yes, enter 'y' else enter 'n'");
