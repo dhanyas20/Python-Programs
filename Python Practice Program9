@@ -3,15 +3,15 @@ Ask the user for a number and determine whether the number is prime or not. (For
 Solution: 
 
 def primenumber(number):
-for i in range(2,number):
-if number%i == 0:
-return 0;
-return 1;
+    for i in range(2,number):
+    if number%i == 0:
+         return 0;
+    return 1;
 
 number = int(input("Enter a number"));
 answer = primenumber(number);
 
 if answer == 0:
-print("The number you entered is not a prime number");
+    print("The number you entered is not a prime number");
 else:
-print("The number you entered is a prime number");
+    print("The number you entered is a prime number");
