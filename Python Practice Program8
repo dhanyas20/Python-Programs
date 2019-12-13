@@ -15,14 +15,14 @@ answer = 'y';
 count = 0
 
 while answer != 'n':
-guess = int(input("Enter your guess"));
-count += 1;
-if guess < number:
-print(str(guess) + " is lesser than the number");
-elif guess > number: 
-print(str(guess) + " is greater than the number");
-else:
-print("Yay! You have guessed the number");
-print("You took " + str(count) + " number of guessed to guess the secret number");
-break;
-answer = input("Do you want to continue your guess ? give 'y' or 'n'");
+    guess = int(input("Enter your guess"));
+    count += 1;
+    if guess < number:
+        print(str(guess) + " is lesser than the number");
+    elif guess > number: 
+        print(str(guess) + " is greater than the number");
+    else:
+        print("Yay! You have guessed the number");
+        print("You took " + str(count) + " number of guessed to guess the secret number");
+        break;
+    answer = input("Do you want to continue your guess ? give 'y' or 'n'");
