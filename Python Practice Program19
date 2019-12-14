@@ -1,0 +1,15 @@
+To load a webpage, to parse and get the html content.
+Using requests and beautifulsoup packages
+
+Solution:
+
+import requests
+from bs4 import BeautifulSoup
+import html5lib
+
+url = 'http://github.com'
+r = requests.get(url)
+print(r.content);
+
+soup = BeautifulSoup(r.content, 'html5lib');
+print(soup.prettify());
