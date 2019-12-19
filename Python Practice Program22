@@ -1,0 +1,30 @@
+You, the user, will have in your head a number between 0 and 100. The program will guess a number, and you, the user, will say whether it is too high, too low, or your number.
+
+At the end of this exchange, your program should print out how many guesses it took to get your number.
+
+Solution:
+
+print("Think of a number between 1 to 100");
+print("I shall try to guess it");
+
+count = 0;
+answer = 'n';
+
+min = 1;
+max = 100;
+
+while(answer == 'n'):
+    guess = (max + min) // 2;
+    print("Is the number " + str(guess) + "?");
+    answer = input("Give 'y' for the correct guess and 'n' for wrong guess");
+    count += 1;
+    if(answer == 'n'):
+        clue = input("If wrong guess, let me know if the number you have thought of is lesser(l) or greater(g) than my guess");
+    else:
+        print("Yay !I guesssed the number in " + str(count)+ " guesses");
+        break;
+
+    if clue == 'g':
+        min = guess;
+    else:
+        max = guess;
